@@ -8,7 +8,12 @@ body {
 
   line-height: 1.5;
   color: black;
-  background-color: #ffffff;
+  background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1124&q=100");
+  background-size: cover;
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
 }
 h1,
 h2,
@@ -21,7 +26,7 @@ h6 {
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 10px 20px;
   border-radius: 10px;
 }
@@ -60,4 +65,19 @@ ul {
 img {
   max-width: 100%;
   height: auto;
+}
+main {
+  background-color: yellowgreen;
+  width: 80%;
+
+  text-align: center;
+  color: #f9f9f9;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.55);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+h1 {
+  font-size: 5rem;
 }
