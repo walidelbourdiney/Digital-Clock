@@ -10,7 +10,6 @@
 
 const clock = document.getElementById("clock");
 
-
 // const names = [
 //   "Liam",
 //   "Sofia",
@@ -34,30 +33,49 @@ const clock = document.getElementById("clock");
 // ----------------------------------------------------------------- //
 //generate Password:
 
-function generatePassword(max, lower, upper, numbers, symbols){
+// function generatePassword(max, lower, upper, numbers, symbols){
 
-const lowerCase = 'abcdefghijklmnopq'
-const upperCase = 'ABCDEFGHIJKLMNOPQ'
-const numberss = '1234567890'
-const symbolss = '!@#$%^&*()_+'
+// const lowerCase = 'abcdefghijklmnopq'
+// const upperCase = 'ABCDEFGHIJKLMNOPQ'
+// const numberss = '1234567890'
+// const symbolss = '!@#$%^&*()_+'
 
-let allowedCharacters = ''
-let passWord = ''
+// let allowedCharacters = ''
+// let passWord = ''
 
-allowedCharacters += lower? lowerCase: '';
-allowedCharacters += upper? upperCase: '';
-allowedCharacters += numbers? numberss: '';
-allowedCharacters += symbols? symbolss: '';
+// allowedCharacters += lower? lowerCase: '';
+// allowedCharacters += upper? upperCase: '';
+// allowedCharacters += numbers? numberss: '';
+// allowedCharacters += symbols? symbolss: '';
 
-for(let i=0;i<max;i++){
-    let random = Math.floor(Math.random() * allowedCharacters.length) + 1
-    passWord += allowedCharacters[random];
+// for(let i=0;i<max;i++){
+//     let random = Math.floor(Math.random() * allowedCharacters.length) + 1
+//     passWord += allowedCharacters[random];
+// }
+
+// return passWord;
+
+// }
+// let x= generatePassword(12, true, true, true, true)
+// console.log(x);
+
+// function Car(model, year, color) {
+//   (this.model = model), (this.year = year), (this.color = color);
+// }
+
+// const car1 = new Car("honda", 1990, "yellow");
+// console.log(car1);
+
+class Car {
+  constructor(model, year) {
+    this.model = model;
+    this.year = year;
+  }
+  details() {
+    console.log(`you drive ${this.model} ${this.year}`);
+  }
 }
 
-return passWord;
+const car1 = new Car("honda", 1990);
 
-
-
-}
-let x= generatePassword(12, true, true, true, true)
-console.log(x);
+console.log(car1.details());
