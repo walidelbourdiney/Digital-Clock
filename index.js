@@ -66,16 +66,45 @@ const clock = document.getElementById("clock");
 // const car1 = new Car("honda", 1990, "yellow");
 // console.log(car1);
 
-class Car {
-  constructor(model, year) {
-    this.model = model;
-    this.year = year;
+// class Car {
+//   constructor(model, year) {
+//     this.model = model;
+//     this.year = year;
+//   }
+//   details() {
+//     console.log(`you drive ${this.model} ${this.year}`);
+//   }
+// }
+
+// const car1 = new Car("honda", 1990);
+
+// console.log(car1.details());
+
+function startCountdown(targetDate) {
+  function updateTimer() {
+    const now = new Date().getTime();
+    const timeLeft = targetDate - now;
+
+    if (timeLeft <= 0) {
+      clock.innerHTML = "Countdown Expired!";
+      clearInterval(interval);
+      return;
+    }
+
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    clock.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
   }
-  details() {
-    console.log(`you drive ${this.model} ${this.year}`);
-  }
+
+  updateTimer(); // Call once immediately
+  const interval = setInterval(updateTimer, 1000);
 }
 
-const car1 = new Car("honda", 1990);
-
-console.log(car1.details());
+// Set target date to April 8, 2015 at 12 AM
+const targetDate = new Date("April 8, 2025 00:00:00").getTime();
+startCountdown(targetDate);
